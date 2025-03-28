@@ -27,5 +27,16 @@
         <script async src="https://widget.brella.io"></script>
         <!-- Inject Brella Widget Here End -->
     </div>
+    <script>
+        function sendHeight() {
+          parent.postMessage({
+            iframeHeight: document.documentElement.scrollHeight
+          }, "*");
+        }
+      
+        window.addEventListener("load", sendHeight);
+        window.addEventListener("resize", sendHeight);
+      </script>
+      
 </body>
 </html>
